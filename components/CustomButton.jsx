@@ -17,7 +17,9 @@ export const CustomButton = ({
       }`}
       disabled={isLoading}
     >
-      <Text className={`text-white font-psemibold text-lg ${textStyles}`}>{title}</Text>
+      <Text className={`text-white font-psemibold text-lg ${textStyles}`}>
+        {title}
+      </Text>
     </TouchableOpacity>
   );
 };

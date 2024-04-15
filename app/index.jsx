@@ -1,10 +1,10 @@
 import { images } from "../constants";
-import { Redirect, router } from "expo-router";
-import { Image, ScrollView, View, Text } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { CustomButton } from "../components/CustomButton";
 import { StatusBar } from "expo-status-bar";
+import { Redirect, router } from "expo-router";
+import { CustomButton } from "../components/CustomButton";
+import { View, Text, Image, ScrollView } from "react-native";
 import { useGlobalContext } from "../context/GlobalProvider";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
   const { isLoading, isLoggedIn } = useGlobalContext();

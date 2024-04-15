@@ -1,20 +1,13 @@
-import {
-  View,
-  Text,
-  FlatList,
-  Image,
-  RefreshControl,
-  Alert,
-} from "react-native";
 import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { images } from "../../constants";
-import { SearchInput } from "../../components/SearchInput";
-import { Trending } from "../../components/Trending";
 import { Empty } from "../../components/Empty";
-import { getAllPosts, getLatestPosts } from "../../lib/appwrite";
 import { useAppwrite } from "../../lib/useAppwrite";
+import { Trending } from "../../components/Trending";
 import { VideoCard } from "../../components/VideoCard";
+import { SearchInput } from "../../components/SearchInput";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { getAllPosts, getLatestPosts } from "../../lib/appwrite";
+import { View, Text, Image, FlatList, RefreshControl } from "react-native";
 
 const Home = () => {
   const { data: posts, refetch } = useAppwrite(getAllPosts);

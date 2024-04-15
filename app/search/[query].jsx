@@ -1,26 +1,16 @@
-import {
-  View,
-  Text,
-  FlatList,
-  Image,
-  RefreshControl,
-  Alert,
-} from "react-native";
 import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { images } from "../../constants";
-import { SearchInput } from "../../components/SearchInput";
-import { Trending } from "../../components/Trending";
 import { Empty } from "../../components/Empty";
+import { useLocalSearchParams } from "expo-router";
+import { View, Text, FlatList } from "react-native";
 import { getSearchPosts } from "../../lib/appwrite";
 import { useAppwrite } from "../../lib/useAppwrite";
 import { VideoCard } from "../../components/VideoCard";
-import { useLocalSearchParams } from "expo-router";
+import { SearchInput } from "../../components/SearchInput";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const SearchQuery = () => {
   const { query } = useLocalSearchParams();
   const { data: posts, refetch } = useAppwrite(() => getSearchPosts(query));
-  const [refreshing, setRefreshing] = React.useState(false);
 
   React.useEffect(() => {
     refetch();

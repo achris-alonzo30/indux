@@ -1,7 +1,7 @@
 import React from "react";
-import { Tabs, Redirect } from "expo-router";
-import { View, Image, Text } from "react-native";
+import { Tabs } from "expo-router";
 import { icons } from "../../constants";
+import { View, Image, Text } from "react-native";
 
 const TabIcon = ({ icon, color, name, focused }) => {
   return (
@@ -33,8 +33,8 @@ const TabsLayout = () => {
           backgroundColor: "#1B1B33",
           borderTopWidth: 1,
           borderTopColor: "#232533",
-          height: 84
-        }
+          height: 84,
+        },
       }}
     >
       <Tabs.Screen

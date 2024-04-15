@@ -1,12 +1,13 @@
-import { View, Text, ScrollView, Image, Alert } from "react-native";
 import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { images } from "../../constants";
-import { FormField }  from "../../components/FormField";
-import { CustomButton } from "../../components/CustomButton";
 import { Link, router } from "expo-router";
 import { createUser } from "../../lib/appwrite";
+import { FormField } from "../../components/FormField";
+import { CustomButton } from "../../components/CustomButton";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { useGlobalContext } from "../../context/GlobalProvider";
+import { View, Text, ScrollView, Image, Alert } from "react-native";
+
 const SignUp = () => {
   const { setUser, setIsLoggedIn } = useGlobalContext();
   const [form, setForm] = React.useState({
@@ -26,8 +27,8 @@ const SignUp = () => {
       const res = await createUser(form.email, form.password, form.username);
       setUser(res);
       setIsLoggedIn(true);
-      
-      router.replace("/home")
+
+      router.replace("/home");
     } catch (e) {
       console.error(JSON.stringify(e, null, 2));
       Alert.alert("Error", e.message);
