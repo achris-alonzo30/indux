@@ -1,7 +1,7 @@
 import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import { icons } from "../constants";
-const FormField = ({
+export const FormField = ({
   title,
   value,
   handleChangeText,
@@ -39,4 +39,3 @@ const FormField = ({
   );
 };
 
-export default FormField;
