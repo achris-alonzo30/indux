@@ -16,6 +16,7 @@ const FormField = ({
       <Text className="text-gray-100 font-pmedium">{title}</Text>
       <View className="w-full h-16 px-4 bg-black-100 rounded-2xl focus:border-secondary flex flex-row items-center ">
         <TextInput
+          autoCapitalize="none"
           className="flex-1 text-white font-psemibold"
           value={value}
           onChangeText={handleChangeText}
